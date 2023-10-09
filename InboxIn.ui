@@ -21,7 +21,7 @@
   </property>
   <property name="windowIcon">
    <iconset>
-    <normaloff>../../Downloads/InboxIn Logo.png</normaloff>../../Downloads/InboxIn Logo.png</iconset>
+    <normaloff>../../Pictures/lt.png</normaloff>../../Pictures/lt.png</iconset>
   </property>
   <property name="autoFillBackground">
    <bool>false</bool>
@@ -46,7 +46,7 @@
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>../../Downloads/InboxIn Logo.png</pixmap>
+     <pixmap>../../Pictures/lt.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -199,6 +199,14 @@ color: rgb(255, 255, 255);</string>
       <width>701</width>
       <height>221</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>11</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 255);</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="sub">

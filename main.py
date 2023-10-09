@@ -41,7 +41,7 @@ def main():
     window.show()
 
     window.checkbtn.clicked.connect(lambda: oncheck(window))
-    window.submibtn.clicked.connect(lambda: sender(window, window.sub.text(), window.emailtext.toPlainText()))
+    window.submibtn.clicked.connect(lambda:    sender(window, window.sub.text(), window.emailtext.toPlainText()))
 
     app.exec()
 
