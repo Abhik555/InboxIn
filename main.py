@@ -1,4 +1,5 @@
 from PyQt6 import QtWidgets, uic
+from PyQt6.QtGui import QPixmap, QIcon
 from PyQt6.QtWidgets import QMessageBox
 import sys
 import smtplib
@@ -38,7 +39,13 @@ def main():
 
     window = uic.loadUi('InboxIn.ui')
     window.setFixedSize(850, 850)
+    Icon = QIcon("./lt.png")
+    window.setWindowIcon(Icon)
     window.show()
+
+    image_path = "./lt.png"  # Replace with the path to your image
+    pixmap = QPixmap(image_path)
+    window.Logo.setPixmap(pixmap)
 
     window.checkbtn.clicked.connect(lambda: oncheck(window))
     window.submibtn.clicked.connect(lambda:    sender(window, window.sub.text(), window.emailtext.toPlainText()))
