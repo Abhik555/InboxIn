@@ -3,6 +3,7 @@ from PyQt6.QtWidgets import QMessageBox
 import sys
 import smtplib
 
+
 def oncheck(window):
     filename = window.emailfile.text()
 
@@ -36,16 +37,16 @@ def main():
     app = QtWidgets.QApplication(sys.argv)
 
     window = uic.loadUi('InboxIn.ui')
-    window.setFixedSize(850,850)
+    window.setFixedSize(850, 850)
     window.show()
 
     window.checkbtn.clicked.connect(lambda: oncheck(window))
-    window.submibtn.clicked.connect(lambda: sender(window , window.sub.text() , window.emailtext.toPlainText()))
+    window.submibtn.clicked.connect(lambda: sender(window, window.sub.text(), window.emailtext.toPlainText()))
 
     app.exec()
 
 
-def sender(window, sub , msg):
+def sender(window, sub, msg):
     try:
         smtp_server = 'smtp.gmail.com'
         smtp_port = 587
@@ -84,7 +85,7 @@ def sender(window, sub , msg):
         window.emailtext.setPlainText("")
         window.sub.setText("")
 
-        successmsg("Successful" , "Email Has Been Sent Successfully")
+        successmsg("Successful", "Email Has Been Sent Successfully")
 
     except Exception as e:
         print(e)
