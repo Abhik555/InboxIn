@@ -4,7 +4,8 @@ from PyQt6.QtWidgets import QMessageBox
 import sys
 import smtplib
 
-#Checks the existance of a file
+
+# Checks the existance of a file
 def oncheck(window):
     filename = window.emailfile.text()
 
@@ -15,7 +16,8 @@ def oncheck(window):
         print(err)
         errormsg("File Could Not be Found!", str(err))
 
-#Success Message Dialog Box
+
+# Success Message Dialog Box
 def successmsg(title, m):
     msg = QMessageBox()
     msg.setIcon(QMessageBox.Icon.Information)
@@ -24,7 +26,8 @@ def successmsg(title, m):
     msg.setWindowTitle("Success")
     msg.exec()
 
-#Error Msg Dialog box
+
+# Error Msg Dialog box
 def errormsg(title, text):
     msg = QMessageBox()
     msg.setIcon(QMessageBox.Icon.Critical)
@@ -34,7 +37,7 @@ def errormsg(title, text):
     msg.exec()
 
 
-#Main Entry Point for the code
+# Main Entry Point for the code
 def main():
     app = QtWidgets.QApplication(sys.argv)
 
@@ -49,11 +52,12 @@ def main():
     window.Logo.setPixmap(pixmap)
 
     window.checkbtn.clicked.connect(lambda: oncheck(window))
-    window.submibtn.clicked.connect(lambda:    sender(window, window.sub.text(), window.emailtext.toPlainText()))
+    window.submibtn.clicked.connect(lambda: sender(window, window.sub.text(), window.emailtext.toPlainText()))
 
     app.exec()
 
-#Function to handle smtp connection and send emails
+
+# Function to handle smtp connection and send emails
 def sender(window, sub, msg):
     try:
         smtp_server = 'smtp.gmail.com'
